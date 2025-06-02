@@ -1,0 +1,60 @@
+/*Basic style for all elements.*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+}
+
+body { /*For background.*/
+    padding: 0%;
+    margin: 0;
+    background: radial-gradient(#f68ef3, #680397);
+}
+
+.calculator-body { /*Calculator display.*/
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-body > button { /*Calculator button display.*/
+    cursor: pointer;
+    font-size: 2rem;
+    color: #680397;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-body > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two { /*For AC and = buttons design.*/
+    grid-column: span 2;
+}
+
+.output { /*Display.*/
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous { /*Previous input on display.*/
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current { /*Current input on display.*/
+    color: white;
+    font-size: 2.5rem;
+}
